@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        {% block styles %}
+            <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+            <link rel="stylesheet" href="{{ url_for('static',filename='css/materialize.min.css') }}">
+        {% endblock %}
+        {% block javascript %}
+            <script src="{{ url_for('static', filename='js/jquery-3.2.0.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+        {% endblock %}
+        <title>
+            {% block title %}Rover Cam{% endblock %}
+        </title>
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>
+                {% block heading %}Rover Cam{% endblock %}
+            </h1>
+        </div>
+        <div class="content">
+            {% block content %}live stream of cam here{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+*.xml
+
+*.iml
+
+*.pyc
+
+*.pem
+
+*.txt
+
+config.py
