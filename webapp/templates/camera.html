@@ -24,9 +24,7 @@
         </div>
         <div class="content">
             {% block content %}
-                {{ stream }}
-                <img src= "{{ stream }}/?action=stream" width="640" height="480"/>
-
+                <img src= "http://{{ stream }}" width="640" height="480"/>
             {% endblock %}
         </div>
     </div>
