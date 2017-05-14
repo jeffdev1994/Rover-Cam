@@ -6,6 +6,4 @@
 
 *.pem
 
-*.txt
-
 config.py

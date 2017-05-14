@@ -56,4 +56,4 @@ def cam():
 if __name__ == '__main__':
     auth = Auth()
     app.secret_key = config.secretKey
-    app.run()
+    app.run(host='0.0.0.0')
