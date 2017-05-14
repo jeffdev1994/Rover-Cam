@@ -25,25 +25,7 @@
         <div class="content">
             {% block content %}
                 {{ stream }}
-                <img src= "{{ stream }}" width="640" height="480"/>
-
-                <br/>
-
-                <video width="640" height="480" preload autoplay>
-                    <source src="{{ stream }}" type="video/mp4">
-                </video>
-
-                <br/>
-
-                <video width="640" height="480" preload autoplay>
-                    <source src="{{ stream }}" type="video/ogg">
-                </video>
-
-                <br/>
-
-                <video width="640" height="480" preload autoplay>
-                    <source src="{{ stream }}" type="video/webm">
-                </video>
+                <img src= "{{ stream }}/?action=stream" width="640" height="480"/>
 
             {% endblock %}
         </div>
