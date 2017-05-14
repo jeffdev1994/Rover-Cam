@@ -24,7 +24,8 @@
         </div>
         <div class="content">
             {% block content %}
-                <img src= "{{ config.cameraURL }}" width="640" height="480"/>
+                {{ stream }}
+                <img src= "{{ stream }}" width="640" height="480"/>
             {% endblock %}
         </div>
     </div>

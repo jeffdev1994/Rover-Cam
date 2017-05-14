@@ -47,7 +47,7 @@ def authenticate():
 @app.route("/cam")
 def cam():
     if auth.isLoggedIn(session.get('username'), session.get('token')):
-        return render_template('camera.html')
+        return render_template('camera.html', stream=config.cameraURL)
 
     session['authError'] = 'missing or incorrect token'
     return redirect(url_for("loginPage"))
