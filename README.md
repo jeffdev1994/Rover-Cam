@@ -10,6 +10,13 @@ intended to be run off raspberry pi 3 with webcam attached
 
 * pip install -r requirements.txt
 
+* create ssl files
+```
+openssl genrsa 1024 > host.key
+chmod 400 host.key
+openssl req -new -x509 -nodes -sha1 -days 365 -key host.key -out host.crt
+```
+
 * Create config.py
 ```python
 import uuid

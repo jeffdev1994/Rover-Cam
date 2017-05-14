@@ -25,6 +25,11 @@
         <div class="content">
             {% block content %}
                 <img src= "http://{{ stream }}" width="640" height="480"/>
+                <br>
+
+                <form action="/logout/" method="POST">
+                    <input class="btn btn-primary btn-submit" type="submit" value="Log Out">
+                </form>
             {% endblock %}
         </div>
     </div>

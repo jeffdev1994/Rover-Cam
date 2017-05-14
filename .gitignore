@@ -6,4 +6,8 @@
 
 *.pem
 
+*.crt
+
+*.key
+
 config.py

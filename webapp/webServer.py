@@ -23,6 +23,7 @@ class Auth:
 def loginPage():
     return render_template('login.html', error=session.get('authError'))
 
+
 @app.route('/login/', methods=['POST'])
 def authenticate():
     try:
@@ -44,6 +45,16 @@ def authenticate():
     session['authError'] = "incorrect username or password"
     return redirect(url_for("loginPage"))
 
+
+@app.route('/logout/', methods=['POST'])
+def logout():
+    del session['token']
+    if 'authError' in session:
+        del session['authError']
+
+    return redirect(url_for("loginPage"))
+
+
 @app.route("/cam")
 def cam():
     if auth.isLoggedIn(session.get('username'), session.get('token')):
@@ -56,4 +67,8 @@ def cam():
 if __name__ == '__main__':
     auth = Auth()
     app.secret_key = config.secretKey
-    app.run(host='0.0.0.0')
+
+    # context = ('host.crt', 'host.key')
+    # app.run(host='0.0.0.0', port='5000', ssl_context=context)
+    
+    app.run(host='0.0.0.0', port='5000')
