@@ -23,7 +23,9 @@
             </h1>
         </div>
         <div class="content">
-            {% block content %}live stream of cam here{% endblock %}
+            {% block content %}
+                <img src= "{{ config.cameraURL }}" width="640" height="480"/>
+            {% endblock %}
         </div>
     </div>
 </body>
